@@ -95,3 +95,84 @@ body {
 .filter-pill.active {
   font-weight: 600;
 }
+
+/* NewsCard */
+.news-card {
+  display: flex;
+  gap: 16px;
+  background: #111118;
+  border-left: 3px solid #00ff88;
+  border-radius: 0 8px 8px 0;
+  padding: 16px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s;
+}
+
+.news-card:hover {
+  background: #16161f;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.05);
+}
+
+.card-rank {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 20px;
+  font-weight: 700;
+  min-width: 32px;
+  padding-top: 2px;
+}
+
+.card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.card-category {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.card-source {
+  font-size: 11px;
+  color: #666;
+}
+
+.card-time {
+  font-size: 11px;
+  color: #555;
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.card-summary {
+  font-size: 13px;
+  color: #999;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+.card-importance {
+  font-size: 12px;
+  color: #00ff88;
+  opacity: 0.7;
+  font-style: italic;
+}
