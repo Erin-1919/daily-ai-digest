@@ -176,3 +176,88 @@ body {
   opacity: 0.7;
   font-style: italic;
 }
+
+/* Loading Skeleton */
+.skeleton-card {
+  display: flex;
+  gap: 16px;
+  background: #111118;
+  border-left: 3px solid #222;
+  border-radius: 0 8px 8px 0;
+  padding: 16px;
+  margin-bottom: 10px;
+}
+
+.skeleton-rank {
+  width: 32px;
+  height: 24px;
+  border-radius: 4px;
+}
+
+.skeleton-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skeleton-line {
+  height: 12px;
+  border-radius: 4px;
+}
+
+.skeleton-line.short { width: 30%; }
+.skeleton-line.wide { width: 90%; }
+.skeleton-line.medium { width: 60%; }
+
+.shimmer {
+  background: linear-gradient(90deg, #1a1a24 25%, #222233 50%, #1a1a24 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Error State */
+.error-state {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.error-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.retry-btn {
+  background: none;
+  border: 1px solid #ef4444;
+  color: #ef4444;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+
+.retry-btn:hover {
+  background: #ef444422;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+  font-size: 14px;
+}
