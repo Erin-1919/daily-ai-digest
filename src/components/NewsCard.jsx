@@ -8,8 +8,10 @@ const CATEGORY_COLORS = {
 }
 
 function timeAgo(dateString) {
-  const now = new Date()
+  if (!dateString) return ''
   const date = new Date(dateString)
+  if (isNaN(date.getTime())) return ''
+  const now = new Date()
   const diffMs = now - date
   const diffHours = Math.floor(diffMs / (1000 * 60 * 60))
 

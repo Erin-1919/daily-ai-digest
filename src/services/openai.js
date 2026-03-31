@@ -76,7 +76,15 @@ Rank by importance to someone following the AI industry closely. Prefer diversit
     throw new Error('Empty response from OpenAI')
   }
 
-  const parsed = JSON.parse(content)
+  let parsed
+  try {
+    parsed = JSON.parse(content)
+  } catch {
+    throw new Error('OpenAI returned unparseable JSON')
+  }
+  if (!parsed.articles || !Array.isArray(parsed.articles)) {
+    throw new Error('OpenAI response missing articles array')
+  }
   return parsed.articles
 }
 

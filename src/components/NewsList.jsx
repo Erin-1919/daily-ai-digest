@@ -43,7 +43,7 @@ export default function NewsList({ articles, loading, error, onRetry }) {
   return (
     <div className="news-list">
       {articles.map((article) => (
-        <NewsCard key={article.rank} article={article} />
+        <NewsCard key={article.originalUrl || article.rank} article={article} />
       ))}
     </div>
   )

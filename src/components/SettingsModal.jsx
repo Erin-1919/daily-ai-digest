@@ -1,9 +1,13 @@
 import { useState } from 'react'
-import { getNewsApiKey, getOpenAiKey, saveApiKeys } from '../utils/apiKeys'
+import { saveApiKeys } from '../utils/apiKeys'
 
 export default function SettingsModal({ onClose, onSave }) {
-  const [newsKey, setNewsKey] = useState(getNewsApiKey())
-  const [openAiKey, setOpenAiKey] = useState(getOpenAiKey())
+  const [newsKey, setNewsKey] = useState(
+    () => localStorage.getItem('newsapi-key') || ''
+  )
+  const [openAiKey, setOpenAiKey] = useState(
+    () => localStorage.getItem('openai-key') || ''
+  )
 
   function handleSave() {
     saveApiKeys(newsKey.trim(), openAiKey.trim())

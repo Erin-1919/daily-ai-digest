@@ -29,7 +29,9 @@ export async function fetchAiNews() {
     throw new Error('No AI news articles found for today')
   }
 
-  return data.articles.map((article) => ({
+  return data.articles
+    .filter((a) => a.title && a.title !== '[Removed]')
+    .map((article) => ({
     title: article.title,
     description: article.description,
     url: article.url,
