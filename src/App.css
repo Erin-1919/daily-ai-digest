@@ -64,3 +64,34 @@ body {
   color: #00ff88;
   border-color: #00ff88;
 }
+
+/* FilterBar */
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-pill {
+  background: transparent;
+  border: 1px solid #333;
+  color: #666;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-pill:hover {
+  color: #e0e0e0;
+  border-color: #555;
+}
+
+.filter-pill.active {
+  font-weight: 600;
+}
