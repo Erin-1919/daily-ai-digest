@@ -261,3 +261,92 @@ body {
   color: #666;
   font-size: 14px;
 }
+
+/* Settings Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal {
+  background: #111118;
+  border: 1px solid #333;
+  border-radius: 12px;
+  width: 420px;
+  max-width: 90vw;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #222;
+}
+
+.modal-title {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 14px;
+  color: #00ff88;
+}
+
+.modal-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-label {
+  font-size: 12px;
+  color: #888;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-field {
+  background: #0a0a0f;
+  border: 1px solid #333;
+  color: #e0e0e0;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: 'Fira Code', 'Courier New', monospace;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #00ff88;
+}
+
+.modal-footer {
+  padding: 16px 20px;
+  border-top: 1px solid #222;
+}
+
+.save-btn {
+  width: 100%;
+  background: #00ff8822;
+  border: 1px solid #00ff88;
+  color: #00ff88;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 12px;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+}
+
+.save-btn:hover {
+  background: #00ff8833;
+}
