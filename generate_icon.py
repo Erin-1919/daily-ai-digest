@@ -6,28 +6,31 @@ with a simple circuit/AI node symbol.
 
 from PIL import Image, ImageDraw, ImageFont
 
-SIZES = [16, 32, 48, 64, 128, 256]
+SIZES = [16, 32, 48, 64, 128, 256, 512]
+SUPERSAMPLE = 4  # Render at 4x then downscale for crisp anti-aliasing
 BG_COLOR = (10, 10, 15)       # #0a0a0f
 ACCENT_COLOR = (0, 255, 136)  # #00ff88
 
 
 def draw_icon(size):
-    img = Image.new('RGBA', (size, size), BG_COLOR + (255,))
+    """Draw at SUPERSAMPLE * size then downscale for crisp results."""
+    ss = size * SUPERSAMPLE
+    img = Image.new('RGBA', (ss, ss), BG_COLOR + (255,))
     draw = ImageDraw.Draw(img)
 
-    margin = size * 0.15
-    center = size / 2
+    margin = ss * 0.15
+    center = ss / 2
 
     # Draw a rounded square border
     draw.rounded_rectangle(
-        [margin, margin, size - margin, size - margin],
-        radius=size * 0.15,
+        [margin, margin, ss - margin, ss - margin],
+        radius=ss * 0.15,
         outline=ACCENT_COLOR,
-        width=max(1, size // 32),
+        width=max(2, ss // 32),
     )
 
     # Draw "AI" text centered
-    font_size = int(size * 0.38)
+    font_size = int(ss * 0.38)
     try:
         font = ImageFont.truetype('consola.ttf', font_size)
     except OSError:
@@ -45,12 +48,12 @@ def draw_icon(size):
     draw.text((tx, ty), text, fill=ACCENT_COLOR, font=font)
 
     # Draw small dots at corners (circuit nodes)
-    dot_r = max(1, size // 24)
+    dot_r = max(2, ss // 24)
     positions = [
         (margin, margin),
-        (size - margin, margin),
-        (margin, size - margin),
-        (size - margin, size - margin),
+        (ss - margin, margin),
+        (margin, ss - margin),
+        (ss - margin, ss - margin),
     ]
     for x, y in positions:
         draw.ellipse(
@@ -58,7 +61,8 @@ def draw_icon(size):
             fill=ACCENT_COLOR,
         )
 
-    return img
+    # Downscale with high-quality resampling
+    return img.resize((size, size), Image.LANCZOS)
 
 
 if __name__ == '__main__':
