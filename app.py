@@ -6,7 +6,7 @@ import webview
 
 PORT = 0  # Let OS pick a free port
 DIST_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'dist')
-ICON_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'app.ico')
+ICON_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'daily-ai-digest.ico')
 
 
 class QuietHandler(http.server.SimpleHTTPRequestHandler):

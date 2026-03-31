@@ -8,7 +8,7 @@ DESKTOP = os.path.join(os.environ['USERPROFILE'], 'Desktop')
 SHORTCUT_PATH = os.path.join(DESKTOP, 'Daily AI Digest.lnk')
 TARGET = os.path.join(PROJECT_DIR, 'venv', 'Scripts', 'pythonw.exe')
 ARGUMENTS = f'"{os.path.join(PROJECT_DIR, "app.py")}"'
-ICON = os.path.join(PROJECT_DIR, 'app.ico')
+ICON = os.path.join(PROJECT_DIR, 'daily-ai-digest.ico')
 WORKING_DIR = PROJECT_DIR
 
 ps_script = f"""
