@@ -27,7 +27,7 @@
 - [ ] **Step 1: Initialize Vite React project**
 
 ```bash
-cd "E:/UCalgary_postdoc/vide_coding/daily-ai-digest"
+cd "E:/UCalgary_postdoc/vibe_coding/daily-ai-digest"
 npm create vite@latest . -- --template react
 ```
 

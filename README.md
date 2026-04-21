@@ -1,5 +1,7 @@
 # Daily AI Digest
 
+![Daily AI Digest screenshot](docs/images/screenshot.jpg)
+
 A desktop app that fetches the top 10 AI news daily, summarized and categorized by GPT-4o. Dark techy aesthetic with neon green accents.
 
 ## Setup
